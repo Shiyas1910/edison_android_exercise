@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dimensFont12">12sp</dimen>
+    <dimen name="dimensFont16">16sp</dimen>
+    <dimen name="dimensFont18">18sp</dimen>
+    <dimen name="dimensFont24">24sp</dimen>
+    <dimen name="dimensFont32">32sp</dimen>
+
+
+    <dimen name="dimensNormalGap">8dp</dimen>
+    <dimen name="dimensNormalMargin16">16dp</dimen>
+    <dimen name="dimens40">40dp</dimen>
+    <dimen name="dimens24">24dp</dimen>
+    <dimen name="dimens64">64dp</dimen>
+    <dimen name="dimens32">32dp</dimen>
+
+</resources>

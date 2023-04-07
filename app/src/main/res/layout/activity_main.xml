@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activities.MainActivity2">
+
+    <FrameLayout
+        android:id="@+id/progressBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorSemiTransparentDark"
+        android:visibility="gone"
+        android:elevation="10dp">
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center" />
+
+    </FrameLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/factLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dimensNormalGap"
+        android:text="@string/fact"
+        android:textColor="@color/black"
+        android:textSize="@dimen/dimensFont32"
+        app:layout_constraintVertical_bias="0.4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/multipleCatLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dimensNormalGap"
+        android:text="@string/multiple_cats"
+        android:textColor="@color/black"
+        android:textSize="@dimen/dimensFont24"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/factLabelTextView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/factDescriptionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimensNormalMargin16"
+        android:layout_marginEnd="@dimen/dimensNormalMargin16"
+        android:textAlignment="center"
+        android:layout_marginBottom="@dimen/dimensNormalGap"
+        android:textColor="@color/black"
+        android:textSize="@dimen/dimensFont16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/multipleCatLabelTextView"
+        tools:text="A cat can travel at 50 kms/hr over a short distance" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/lengthTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dimensNormalGap"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:visibility="gone"
+        android:textSize="@dimen/dimensFont24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/factDescriptionTextView"
+        tools:text="Length: 111" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/updateFactButton"
+        style="@style/AppTheme.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/update_fact"
+        android:textColor="@color/white"
+        android:layout_marginTop="@dimen/dimensNormalMargin16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lengthTextView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

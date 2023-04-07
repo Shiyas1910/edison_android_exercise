@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Edison Android Exercise</string>
+    <string name="fact">Fact</string>
+    <string name="multiple_cats">Multiple Cats!!</string>
+    <string name="length">Length: %1$s</string>
+    <string name="update_fact">Update Fact</string>
+    <string name="error">Error Occurred!</string>
 </resources>

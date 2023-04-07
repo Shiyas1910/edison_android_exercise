@@ -4,13 +4,13 @@ import com.google.protobuf.gradle.protobuf
 import com.google.protobuf.gradle.protoc
 
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
     id("org.jetbrains.kotlin.plugin.serialization")
 
     kotlin("kapt")
-    id("com.google.dagger.hilt.android")
-    id("com.google.protobuf")
+    alias(libs.plugins.hilt.android)
+    alias(libs.plugins.protobuf)
 }
 
 android {
@@ -45,6 +45,8 @@ android {
     }
     buildFeatures {
         compose = true
+        dataBinding = true
+        viewBinding = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.4.2"
@@ -59,7 +61,7 @@ android {
 // Setup protobuf configuration, generating lite Java and Kotlin classes
 protobuf {
     protoc {
-        artifact = "com.google.protobuf:protoc:22.0"
+        artifact = "com.google.protobuf:protoc:3.22.0"
     }
     generateProtoTasks {
         all().forEach { task ->
@@ -76,30 +78,31 @@ protobuf {
 }
 
 dependencies {
-    implementation("androidx.core:core-ktx:1.9.0")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.5.1")
-    implementation("androidx.activity:activity-compose:1.6.1")
-    implementation("androidx.compose.ui:ui:1.3.3")
-    implementation("androidx.compose.ui:ui-tooling-preview:1.3.3")
-    implementation("androidx.compose.material3:material3:1.0.1")
-    implementation("androidx.datastore:datastore-preferences:1.0.0")
-    implementation("androidx.datastore:datastore:1.0.0")
-    implementation("com.google.dagger:hilt-android:2.44.2")
+    implementation(libs.android.ktx)
+    implementation(libs.lifecycle.runtime)
+    implementation(libs.compose)
+    implementation(libs.bundles.compose.ui)
+    implementation(libs.androidMaterial3)
+    implementation(libs.bundles.data.store)
+    implementation(libs.dagger.hilt)
+    implementation(libs.appcompat)
+    implementation(libs.android.material)
+    implementation(libs.android.constraint)
     kapt("com.google.dagger:hilt-android-compiler:2.44.2")
-    implementation("com.google.protobuf:protobuf-kotlin-lite:3.21.12")
+    implementation(libs.kotlin.protobuf)
 
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0-RC")
-    implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.8.0")
+    implementation(libs.kotlin.serialization)
+    implementation(libs.jakewharton.serialization)
 
-    implementation("com.squareup.okhttp3:okhttp:4.10.0")
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation(libs.squareup.okhttp)
+    implementation(libs.squareup.retrofit)
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-    androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.3.3")
-    debugImplementation("androidx.compose.ui:ui-tooling:1.3.3")
-    debugImplementation("androidx.compose.ui:ui-test-manifest:1.3.3")
+    androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.4.1")
+    debugImplementation("androidx.compose.ui:ui-tooling:1.4.1")
+    debugImplementation("androidx.compose.ui:ui-test-manifest:1.4.1")
 }
 
 kapt {

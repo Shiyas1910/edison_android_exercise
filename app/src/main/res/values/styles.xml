@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme.Button"
+        parent="Widget.MaterialComponents.Button">
+        <item name="android:background">@drawable/shape_selectable_primary_round</item>
+        <item name="android:paddingStart">@dimen/dimens24</item>
+        <item name="android:paddingEnd">@dimen/dimens24</item>
+        <item name="android:textSize">@dimen/dimensFont16</item>
+    </style>
+</resources>
